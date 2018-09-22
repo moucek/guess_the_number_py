@@ -3,8 +3,8 @@ import brainvision as bv
 import os
 
 
-header: str = "/data/test.vhdr"
-header2: str = "/data/blastnice_20141023_21.vhdr"
+header: str = "/data/1/test.vhdr"
+header2: str = "/data/1/blastnice_20141023_21.vhdr"
 cwd = os.getcwd()
 
 #hello = tf.constant('Hello, TensorFlow!')

@@ -62,7 +62,7 @@ def read_eeg(fname, chan_resolution):
 
   with open(fname, 'rb') as f:
     #raw = f.read()
-    #size = len(raw)/2
+    #size = len(raw)/odml_nix_data
     #    ints = np.ndarray((nchan, size/nchan), dtype='<i2', order='F', buffer=raw)
     # TODO use header data type
     data = np.fromfile(f, dtype=np.float32)

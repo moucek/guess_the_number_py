@@ -1,8 +1,10 @@
 import nixio
 import numpy as np
+import os
 import brainvision_parser as bvp
 
-main_path = "D:\\TEMP\\drive-download-20180922T090313Z-001\\"
+cwd = os.getcwd()
+main_path = cwd + "/data/odml_nix_data/"
 header_name = main_path + "P3Numbers_20150618_f_10_001.vhdr"
 
 header, markers, eeg_data = bvp.read_brainvis_triplet(header_name)
