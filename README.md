@@ -6,7 +6,7 @@ https://github.com/G-Node/python-odml
 
 https://github.com/G-Node/nix-odML-converter
 
-mostly download all and install with python setup.py install
+mostly download all and install with command "python setup.py install"
 
 update metadata to newest version  with https://github.com/G-Node/python-odml/tree/master/odml/scripts/odml_to_rdf 
 
