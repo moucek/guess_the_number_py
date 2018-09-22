@@ -4,7 +4,7 @@
 import logging, re, os.path, itertools
 from configparser import ConfigParser
 import numpy as np
-import io
+from io import StringIO
 
 # TODO:
 # - add encoding of commas (\1)
@@ -22,7 +22,7 @@ def read_header(file_name):
 
         lines = itertools.takewhile(lambda x: '[Comment]' not in x, f.readlines())
         cfg = ConfigParser()
-        cfg.read_file(io.StringIO(''.join(lines)))
+        cfg.read_file(StringIO(''.join(lines)))
 
         # get sampling info
         sample_rate = 1e6 / cfg.getfloat('Common Infos', 'SamplingInterval')
