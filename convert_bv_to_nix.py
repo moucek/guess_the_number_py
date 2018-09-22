@@ -17,7 +17,9 @@ rs_eeg_data = np.reshape(eeg_data, [chan_num, int(np.size(eeg_data)/chan_num)])
 # nix_file = nixio.File.open(nix_filename)
 # switch when done
 nix_filename = main_path + "bla.nix"
-
+data_units = "mV"
+data_label = "voltage"
+stepsize=header["sample_rate"]
 with nixio.File.open(nix_filename, mode=nixio.FileMode.ReadWrite, compression=nixio.Compression.DeflateNormal) as nix_file:
   main_block_name = "something"
   b = nix_file.create_block(main_block_name, "eeg/main")
@@ -26,6 +28,13 @@ with nixio.File.open(nix_filename, mode=nixio.FileMode.ReadWrite, compression=ni
 
   for rawda in rs_eeg_data:
     da = b.create_data_array(name=header["chan_lab"][i], array_type="eeg/channel", dtype=np.float32, data=rs_eeg_data[i])
+    da.unit = data_units
+    da.label = data_label
+    # add a descriptor for the xaxis
+    dim = da.append_sampled_dimension(stepsize)
+    dim.unit = "s"
+    dim.label = "time"
+    dim.offset = 0.0  # optional
     eeg_g.data_arrays.append(da)
     i = i + 1
 
