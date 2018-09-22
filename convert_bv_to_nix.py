@@ -41,7 +41,9 @@ with nixio.File.open(nix_filename, mode=nixio.FileMode.ReadWrite, compression=ni
   stimuli_g = b.create_group("stimuli", "eeg/stimuli")
 
   da_stname = b.create_data_array(name="stimuli", array_type="stimuli/id", dtype=np.int, data=markers[0])
+  da_stname.label="Stimulus id"
   da_sttime = b.create_data_array(name="stimuli_time", array_type="stimuli/time", dtype=np.int, data=markers[1])
+  da_sttime.label="stimulus time points"
   stimuli_g.data_arrays.extend([da_stname, da_sttime])
 
   mtag = b.create_multi_tag("stimtochannel", "stimulus.times", da_sttime)
