@@ -1,12 +1,11 @@
 # guess_the_number_py
 
-need nixio, odml,
- 
-https://github.com/G-Node/python-odml
+we need the following packages 
+- nixio Python bindings for NIX - https://github.com/G-Node/nixpy documentation and stable version  - https://pypi.org/project/nixio/1.5.0b1/ - 
+- odml https://github.com/G-Node/python-odml - open metadata Markup Language - file based format (XML, JSON, YAML) for storing metadata
+- NIXódML converter - https://github.com/G-Node/nix-odML-converter - reads in odML / NIX files and writes the metadata structure to newly created NIX / odML file
 
-https://github.com/G-Node/nix-odML-converter
-
-mostly download all and install with command "python setup.py install"
+download all and install with command "python setup.py install"
 
 update metadata to newest version  with https://github.com/G-Node/python-odml/tree/master/odml/scripts/odml_to_rdf 
 
