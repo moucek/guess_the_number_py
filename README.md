@@ -1,16 +1,21 @@
 # guess_the_number_py
 
 we need the following packages 
+- odml  converter - https://github.com/G-Node/python-odml/tree/master/odml/scripts/odml_to_rdf 
 - nixio Python bindings for NIX - https://github.com/G-Node/nixpy documentation and stable version  - https://pypi.org/project/nixio/1.5.0b1/ - 
 - odml https://github.com/G-Node/python-odml - open metadata Markup Language - file based format (XML, JSON, YAML) for storing metadata
-- NIXódML converter - https://github.com/G-Node/nix-odML-converter - reads in odML / NIX files and writes the metadata structure to newly created NIX / odML file
+- nix-odML converter - https://github.com/G-Node/nix-odML-converter - reads in odML / NIX files and writes the metadata structure to newly created NIX / odML file
 
 download all and install with command "python setup.py install"
 
-update metadata to newest version  with https://github.com/G-Node/python-odml/tree/master/odml/scripts/odml_to_rdf 
+How to proceeed
 
-create metadata nix from xml metadata with nix-odml (convert_odml_to_nix)  
+- take EEG data together with metadata from EEGbase eegdatabase.kiv.zcu.cz
 
-add data to created nix file with convert_bv_to_nix
+ - update metadata to the new odml 1.4 version using odml converter
 
-TODO fix brain vision loader / parser
+-  create the nix file containing only metadata from EEGGbase odml- xml metadata (that were already converted to the version 1.4) with nix-odml converter (convert_odml_to_nix)  
+
+- add data (.eeg..vhdr,.vmrk files) to already created nix file with convert_bv_to_nix, available at https://github.com/JiriVanek/guess_the_number_py (it is a preliminary conversion from brainVision format that has to be updated)
+
+How to update BrainVision loader/parser - look at 
