@@ -14,8 +14,9 @@ How to proceeed
 
  - update metadata to the new odml 1.4 version using odml converter
 
--  create the nix file containing only metadata from EEGGbase odml- xml metadata (that were already converted to the version 1.4) with nix-odml converter (convert_odml_to_nix)  
+-  create the nix file containing only odml- xml metadata from EEGGbase (that were already converted to the version 1.4) with nix-odml converter (convert_odml_to_nix)  
 
 - add data (.eeg..vhdr,.vmrk files) to already created nix file with convert_bv_to_nix, available at https://github.com/JiriVanek/guess_the_number_py (it is a preliminary conversion from brainVision format that has to be updated)
 
-How to update BrainVision loader/parser - look at 
+How to update BrainVision loader/parser - look at https://github.com/mne-tools/mne-python/blob/master/mne/io/brainvision/brainvision.py
+where is a loader from BrainVision format that converts data to some inner MNE stuctures, then it is necessary is to find mapping between MNE and NIX.
